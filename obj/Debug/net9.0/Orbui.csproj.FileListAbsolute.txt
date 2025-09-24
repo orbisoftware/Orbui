@@ -1,0 +1,7 @@
+C:\Users\fabio\Documents\GitHub\Orbui\obj\Debug\net9.0\Orbui.csproj.AssemblyReference.cache
+C:\Users\fabio\Documents\GitHub\Orbui\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\fabio\Documents\GitHub\Orbui\obj\Debug\net9.0\Orbui.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fabio\Documents\GitHub\Orbui\obj\Debug\net9.0\Orbui.AssemblyInfoInputs.cache
+C:\Users\fabio\Documents\GitHub\Orbui\obj\Debug\net9.0\Orbui.AssemblyInfo.cs
+C:\Users\fabio\Documents\GitHub\Orbui\obj\Debug\net9.0\Orbui.csproj.CoreCompileInputs.cache
+C:\Users\fabio\Documents\GitHub\Orbui\obj\Debug\net9.0\Orbui.sourcelink.json
