@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "watch:tailwind": "npx tailwindcss -i docs/wwwroot/css/input.css -o docs/wwwroot/css/output.css --watch --minify",
+    "dev": "dotnet watch run --project docs",
+    "start": "dotnet run --project docs"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "tailwindcss": "^4.1.13"
+  }
+}
