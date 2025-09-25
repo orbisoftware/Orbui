@@ -1,11 +1,15 @@
 {
   "scripts": {
     "watch:tailwind": "npx tailwindcss -i docs/wwwroot/css/input.css -o docs/wwwroot/css/output.css --watch --minify",
-    "dev": "dotnet watch run --project docs",
-    "start": "dotnet run --project docs"
+    "watch:dotnet": "dotnet watch run --project docs",
+    "dev": "npm-run-all --parallel watch:*",
+    "start": "dotnet run --project docs",
+    "build:tailwind": "npx tailwindcss -i docs/wwwroot/css/input.css -o docs/wwwroot/css/output.css --minify",
+    "build": "npm run build:tailwind"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.13",
+    "npm-run-all": "^4.1.5",
     "tailwindcss": "^4.1.13"
   }
 }
