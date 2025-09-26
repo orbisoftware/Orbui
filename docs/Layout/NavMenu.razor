@@ -1,6 +1,30 @@
 ﻿@inject NavigationManager NavigationManager
 
 <nav class="flex flex-col bg-gray-800 text-white min-h-screen w-64 gap-4 p-4 items-center justify-start">
-    <NavLink href="" Match="NavLinkMatch.All">Home</NavLink>
-    <NavLink href="counter">Counter</NavLink>
+    @foreach ((string Template, string Name) route in Routes) {
+        <NavLink href="@route.Template" Match="NavLinkMatch.All">@route.Name</NavLink>
+    }
 </nav>
+
+@code {
+    private List<(string Template, string Name)> Routes = new();
+
+    protected override void OnInitialized() {
+        var routeComponents = typeof(Program).Assembly
+            .ExportedTypes
+            .Where(t => typeof(ComponentBase).IsAssignableFrom(t))
+            .SelectMany(t => t.GetCustomAttributes(typeof(RouteAttribute), inherit: true)
+                .Cast<RouteAttribute>()
+                .Select(attr => attr.Template))
+            .ToList();
+        Routes = routeComponents.Select(r => (r, GetNameFromRoute(r))).ToList();
+    }
+
+    private string GetNameFromRoute(string route) {
+        if (string.IsNullOrWhiteSpace(route) || route == "/") return "Home";
+        // remove leading "/"
+        var clean = route.TrimStart('/');
+        // capitalize first letter
+        return char.ToUpper(clean[0]) + clean.Substring(1);
+    }
+}

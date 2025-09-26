@@ -2,9 +2,17 @@
 
 <PageTitle>Button</PageTitle>
 
-<h1>Button</h1>
+<p role="status">Current count: @currentCount</p>
+
+<button @onclick="IncrementCount">Click me</button>
 
 <OrbButton>Click Me!</OrbButton>
 
 @code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
 }
